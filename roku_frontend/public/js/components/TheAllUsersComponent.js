@@ -6,7 +6,7 @@ export default {
     <section class="user-panel">
         <h2>Who's Using Roku?</h2>
 
-        <section>
+        <section class="users-area">
         <ul>
         <li v-for= "user in users"><user :user="user"></user></li>
         </ul>

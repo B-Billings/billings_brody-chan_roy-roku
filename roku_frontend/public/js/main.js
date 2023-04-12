@@ -3,6 +3,8 @@ import LogInPage from './components/TheLoginComponent.js';
 import AllUserPage from './components/TheAllUsersComponent.js';
 import Defaulthome from './components/TheHomePage.js';
 import kidshome from './components/TheKidsHomePage.js';
+import createuser from './components/TheCreateUserPage.js';
+
 //import ErrorPage from './modules/ErrorPage.js';
 
 const { createApp } = Vue; //import the createApp method from the Vue library
@@ -34,6 +36,12 @@ const router = VueRouter.createRouter({
             path:'/kidshome', //this would be the adult homepage
             name: 'kidshome',
             component: kidshome
+        },
+        
+        {
+            path:'/users', //this would be the adult homepage
+            name: 'allusers',
+            component: AllUserPage
         },
 
 
@@ -72,6 +80,10 @@ const router = VueRouter.createRouter({
 
             loggedin(){
                 this.authenticated = true;
+            },
+            gotoprofiles() {
+                // Redirect to CreateUserPage
+                this.$router.push({ name: 'allusers' });
             }
         }
     });
