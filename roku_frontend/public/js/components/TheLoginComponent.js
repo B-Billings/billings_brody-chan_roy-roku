@@ -4,16 +4,17 @@ export default {
 <section class="container">
 
   <div class="jumbotron">
-      <h1>Welcome to Flashblack!</h1>
+      <h1>Welcome to Roku Flashblack!</h1>
       <p class="lead">
       Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.
       </p>
   </div>
 
   <section class="log-in">
+  <h2 class="login-header">USERNAME</h2>
     <label class="sr-only" for="inlineFormInputName">Name</label>
     <input ref="username" v-model="username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
-
+    <h2 class="login-header">PASSWORD</h2>
     <label class="sr-only" for="inlineFormPassword">Password</label>
     <input  ref="password" v-model="password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
   </section>
@@ -41,7 +42,29 @@ data() {
 },
 
 methods: {
-  trysignup(){ debugger;},
+  trysignup(){ router.post('/register', (req, res) => {
+    console.log('hit the registration route');
+    console.log(req.body);
+  
+    pool.getConnection(function(err, connection) {
+      if (err) throw err; // not connected!
+  
+      // Use the connection
+      connection.query(`INSERT INTO tbl_users (username, password, fname, lname, email, avatar, role) 
+                        VALUES ("${req.body.username}", "${req.body.password}", "${req.body.fname}", "${req.body.lname}", "${req.body.email}", "default", "user")`, function (error, results) {
+        // When done with the connection, release it.
+        connection.release();
+  
+        // Handle error after the release.
+        if (error) throw error;
+        console.log('User created:', results);
+        // Don't use the connection here, it has been returned to the pool.
+        res.json({ message: 'success', user_id: results.insertId });
+      });
+    });
+  
+  })
+  },
  tryLogIn() {
   //check to see if there are a username and password
   //and make sure there' no extra white space

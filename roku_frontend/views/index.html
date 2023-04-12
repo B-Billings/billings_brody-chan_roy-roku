@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="/css/main.css">
-    <!-- overiride file -  these rules would go in a sass file. but sass is not working in the lab's computer, so use this for now-->
-    <link rel="stylesheet" href="/css/overrides.css">
     <title>.: Roku Flashback :.</title>
 </head>
 
@@ -18,10 +16,10 @@
     <main id="app">      
 <section>
     <header id="mainheader">
-     <!---->   <img src="images/roku.svg" alt="Roku logo" width="90"><span>FlashBack</span>
+     <!---->   <img id="main-logo" src="images/roku.svg" alt="Roku logo" width="90">
         <nav class="float-right">
             <ul v-if="authenticated">
-                <li><i class="fas fa-user-circle"></i></li>
+                <li @click="gotoprofiles"><i class="fas fa-user-circle"></i></li>
                 <li><i class="fas fa-cog"></i></li>
                 <li @click="logUserOut"><i class="fas fa-power-off"></i></li>
             </ul>
