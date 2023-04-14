@@ -4,7 +4,7 @@ const sqlcreds = {
     user            : 'root',
     password        : 'root',
     database        : 'db_rokuusers',
-    port            : 3306 //8889
+    port            : 8889 //8889
 }
 
 module.exports = sqlcreds;
