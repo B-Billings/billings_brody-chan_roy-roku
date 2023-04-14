@@ -3,6 +3,7 @@ import LogInPage from './components/TheLoginComponent.js';
 import AllUserPage from './components/TheAllUsersComponent.js';
 import Defaulthome from './components/TheHomePage.js';
 import kidshome from './components/TheKidsHomePage.js';
+import MovieDetails from './components/MovieDetails.js'
 import createuser from './components/TheCreateUserPage.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
@@ -18,7 +19,12 @@ const router = VueRouter.createRouter({
            name: 'login', //for programmatiuc navigation
          component: LogInPage // the component to render
        },
-
+       
+       {
+        path: '/movie/:title', // Update the URL parameter name to 'title'
+        name: 'MovieDetails',
+        component: MovieDetails,
+      },
 
         { 
             path: '/users', //brower location bar looks like this
@@ -92,3 +98,6 @@ const router = VueRouter.createRouter({
   app.use(router);
   
   app.mount('#app');
+
+
+  
