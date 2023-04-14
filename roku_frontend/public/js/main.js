@@ -3,7 +3,7 @@ import LogInPage from './components/TheLoginComponent.js';
 import AllUserPage from './components/TheAllUsersComponent.js';
 import Defaulthome from './components/TheHomePage.js';
 import kidshome from './components/TheKidsHomePage.js';
-import MovieDetails from './components/MovieDetails.js'
+import MovieDetails from './components/MovieDetails.js';
 import createuser from './components/TheCreateUserPage.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
@@ -31,6 +31,7 @@ const router = VueRouter.createRouter({
             name: 'allusers', //for programmatiuc navigation
             component: AllUserPage // the component to render
         },
+
 
         {
             path:'/home', //this would be the adult homepage
