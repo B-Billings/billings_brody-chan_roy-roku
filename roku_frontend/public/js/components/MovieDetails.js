@@ -2,14 +2,14 @@ export default {
   name: 'MovieDetails',
   data() {
     return {
-      movie: null, // Store movie data
+      movie: null, 
     }
   },
   template: `
     <div v-if="movie">
       <h1>{{ movie.title }}</h1>
       <p>YouTube Trailer:</p>
-      <iframe width="560" height="315" :src="youtubeEmbedUrl" frameborder="0" allowfullscreen></iframe>
+      <iframe width="1280" height="720" :src="youtubeEmbedUrl" frameborder="0" allowfullscreen ></iframe>
       <p>Released: {{ movie.description }}</p>
       <p>Genre: {{ movie.genres }}</p>
       <p>Plot: {{ movie.plot }}</p>
@@ -19,7 +19,7 @@ export default {
       <p>Votes: {{ movie.imDbRatingVotes }}</p>
  
       <img :src="movie.image" alt="Movie Image">
-      <button @click="shareMovie">Share</button> <!-- Add Share button with click event listener -->
+      <button @click="shareMovie">Share</button> 
     </div>
     <div v-else>
       <p>Loading...</p>
@@ -27,9 +27,9 @@ export default {
   `,
   computed: {
     youtubeEmbedUrl() {
-      // Compute the embedded YouTube video URL
+
       if (this.movie && this.movie.videoUrl) {
-        // Replace "watch" with "embed" in the YouTube video URL
+ 
         return this.movie.videoUrl.replace('/watch?v=', '/embed/');
       }
       return '';
@@ -37,16 +37,16 @@ export default {
   },
   methods: {
     shareMovie() {
-      // Check if the navigator.share() method is supported by the browser
+
       if (navigator.share) {
-        // Create a shareable object with movie details
+   
         const shareData = {
           title: this.movie.title,
           text: `Check out this movie: ${this.movie.title} (${this.movie.releaseDate})`,
           url: window.location.href
         };
         
-        // Call the navigator.share() method to share the movie details
+ 
          navigator.share(shareData)
           .then(() => {
             console.log('Movie details shared successfully!');
@@ -55,26 +55,23 @@ export default {
             console.log('Error sharing movie details:', error);
           });
       } else {
-        // Fallback option for browsers that do not support navigator.share()
-        // You can display a message or provide alternative sharing options here
+
         console.log('Sharing is not supported by this browser. You can manually copy the movie details for sharing.');
       }
     }
   },
   created() {
-    // Fetch movie details based on movie title parameter
-    fetch(`https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?title=${encodeURIComponent(this.$route.params.title)}&certificates=us:PG`)
+
+    fetch(`https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?title=${encodeURIComponent(this.$route.params.title)}`)
       .then(response => response.json())
       .then(data => {
         if (data.results && data.results.length > 0) {
-          this.movie = data.results[0]; // Assuming the API response contains an array of results, and we only need the first result as movie details
-
-          // Fetch YouTube trailer URL for the movie
+          this.movie = data.results[0]; 
           fetch(`https://imdb-api.com/en/API/YouTubeTrailer/k_mdq0yq5j/${this.movie.id}`)
             .then(response => response.json())
             .then(data => {
               if (data && data.videoUrl) {
-                this.movie.videoUrl = data.videoUrl; // Set the YouTube trailer URL to the movie object
+                this.movie.videoUrl = data.videoUrl; 
               }
             })
             .catch(error => {

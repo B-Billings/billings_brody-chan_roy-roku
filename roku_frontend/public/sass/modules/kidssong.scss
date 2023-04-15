@@ -1,0 +1,55 @@
+#kids-songs-list {
+display: flex;
+text-align: center;
+flex-direction: column;
+flex-wrap: wrap;
+overflow: scroll;
+}
+.search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+.songs-list-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .song-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+  }
+  
+  .song-item {
+
+    cursor: pointer;
+
+  }
+  
+  .cover-art {
+
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+
+  }
+  
+  .song-details {
+
+    padding: 10px;
+  }
+  
+  .song-title {
+
+    font-weight: bold;
+  }
+  
+  .subtitle {
+
+    margin-top: 5px;
+
+  }
+  

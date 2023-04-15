@@ -4,9 +4,9 @@ export default {
   data() {
     return {
       searchQuery: '',
-      genreFilter: '', // Store the selected genre filter
-      releaseYearFilter: '', // Store the selected release year filter
-      allMovies: [], // Store all movies data
+      genreFilter: '', 
+      releaseYearFilter: '', 
+      allMovies: [], 
     }
   },
 

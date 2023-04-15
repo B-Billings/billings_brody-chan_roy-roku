@@ -9,6 +9,7 @@ import kidshomemusic from './components/TheKidsHomePageMusic.js';
 import kidshomevideo from './components/TheKidsHomePageVideos.js';
 import createuser from './components/TheCreateUserPage.js';
 import settingspage from './components/TheSettingsPage.js';
+import SongDetails from './components/SongDetails.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
 
@@ -28,6 +29,11 @@ const router = VueRouter.createRouter({
         path: '/movie/:title', // Update the URL parameter name to 'title'
         name: 'MovieDetails',
         component: MovieDetails,
+      },
+      {
+        path: '/song/:songId', // Update the URL song parameter name to 'id'
+        name: 'SongDetails',
+        component: SongDetails,
       },
 
         { 
