@@ -96,6 +96,61 @@ router.get('/users/:user', (req, res) => {
     
 })
 
+// router.post('/signup', (req, res) => {
+//   const user = {
+//       fname: req.body.fname,
+//       lname: req.body.lname,
+//       permissions: req.body.permissions,
+//       password: req.body.password,
+//       username: req.body.username,
+//       avatar: req.body.avatar
+//   };
+
+//   const avatarImages = ['count_olaf.jpg', 'temp_avatar.jpg'];
+//   const randomIndex = Math.floor(Math.random() * avatarImages.length);
+//   const selectedAvatar = avatarImages[randomIndex];
+
+//   pool.getConnection(function(err, connection) {
+//       if (err) throw err;
+//       console.log("Connected!");
+
+//       const sqlQuery = `INSERT INTO tbl_users (fname, lname, permissions, password, username, avatar) VALUES ('test', 'test','2', '${user.password}', '${user.username}', '${selectedAvatar}')`;
+
+//       connection.query(sqlQuery, function (err, result) {
+//           connection.release();
+//           if (err) throw err;
+//           console.log("IT WENT THROUGH");
+//           res.send('User added');
+//       });
+//   });
+// });
+//This one works but doesnt have the random generator from an array
+router.post('/signup', (req, res) => {
+  const user = {
+      fname: req.body.fname,
+      lname: req.body.lname,
+      permissions: req.body.permissions,
+      password: req.body.password,
+      username: req.body.username,
+      avatar: req.body.avatar
+  };
+  
+  pool.getConnection(function(err, connection) {
+      if (err) throw err;
+      console.log("Connected!");
+
+      const sqlQuery = `INSERT INTO tbl_users (fname, lname, permissions, password, username, avatar) VALUES ('${user.fname}', '${user.lname}','${user.permissions}', '${user.password}', '${user.username}', '${user.avatar}')`;
+
+      connection.query(sqlQuery, function (err, result) {
+          connection.release();
+          if (err) throw err;
+          console.log("IT WENT THROUGH");
+          res.send('User added');
+      });
+  });
+});
+
+
 router.get('/user/:user', (req, res) => {
     res.json({message: 'hit single users route'});
 })

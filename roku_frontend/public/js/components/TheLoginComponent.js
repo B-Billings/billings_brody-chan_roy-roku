@@ -19,17 +19,19 @@ export default {
     <input  ref="password" v-model="password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
   </section>
 
-  <button @click="tryLogIn"
-      type="submit" 
-      class="btn btn-primary login-submit"
-    >Go!
-  </button>
-
-  <button v-if="signup" @click="trysignup"
-  type="submit" 
-  class="btn btn-primary login-submit signup"
->JOIN!
+  <button @click="tryLogIn" type="submit" class="btn btn-primary login-submit">
+  <i class="fas fa-arrow-circle-right"></i>
 </button>
+
+
+<router-link tag="button" to="/createuser" class="btn btn-primary login-submit signup">
+  New? Create a user here!
+</router-link>
+
+<router-link v-if="signup" tag="button" to="/createuser" class="btn btn-primary login-submit signup">
+NO USER FOUND JOIN NOW!
+</router-link>
+
 </section>`,
 
 data() {
@@ -42,29 +44,29 @@ data() {
 },
 
 methods: {
-  trysignup(){ router.post('/register', (req, res) => {
-    console.log('hit the registration route');
-    console.log(req.body);
+  // trysignup() {
+  //   let user = {
+  //     fname: this.fname,
+  //     lname: this.lname,
+  //     password: this.password,
+  //     avatar: this.avatar,
+  //     username: this.username,
+  //   }
   
-    pool.getConnection(function(err, connection) {
-      if (err) throw err; // not connected!
+  //   fetch('/ums/signup', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(user)
+  //   })
+  //   .then(res => res.text())
+  //   .then(data => {
+  //     console.log(data);
+  //   })
+  //   .catch(error => console.error(error))
+  // },
   
-      // Use the connection
-      connection.query(`INSERT INTO tbl_users (username, password, fname, lname, email, avatar, role) 
-                        VALUES ("${req.body.username}", "${req.body.password}", "${req.body.fname}", "${req.body.lname}", "${req.body.email}", "default", "user")`, function (error, results) {
-        // When done with the connection, release it.
-        connection.release();
-  
-        // Handle error after the release.
-        if (error) throw error;
-        console.log('User created:', results);
-        // Don't use the connection here, it has been returned to the pool.
-        res.json({ message: 'success', user_id: results.insertId });
-      });
-    });
-  
-  })
-  },
  tryLogIn() {
   //check to see if there are a username and password
   //and make sure there' no extra white space

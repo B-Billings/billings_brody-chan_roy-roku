@@ -34,15 +34,15 @@
     font-size: 2.25em;
     padding: 0 0.7em; 
 }
-#app{
+#app {
     display: flex;
-    background: rgb(134, 6, 134);
+    background: transparent;
     color: #fff;
     align-items: center;
     justify-content: center;
     margin-top: 4em;
-
-}
+  }
+  
 .users-area{
     display: flex;
     flex-direction: row;
@@ -68,7 +68,7 @@ padding-left: 0;
 
 }
 html{
-    background: rgb(134, 6, 134);
+    background: linear-gradient(to bottom, #e800fd, #000000);
 
 }
 #main-header {
@@ -87,9 +87,12 @@ html{
     justify-content: center;
     margin-top: 80px;
     width: 80%;
-    background-color: rgba(0, 0, 0, 0.781);
     border-radius: 10px;
     padding: 1em;
+    text-align: center;
+}
+#render-container button {
+  text-align: center;
 }
 
 .login-submit {
@@ -134,7 +137,6 @@ html {
 }
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: black;
     color: white;
     margin-bottom: 100px;
     background: url(../images/gunmetal.jpg) repeat;
@@ -375,6 +377,18 @@ footer ul li {
         max-width: none;
     }
 }
+#success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+  }
+  
 @media (min-width: 992px) {
     .display-4 {
         font-size: 3.5rem;
