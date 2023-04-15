@@ -4,7 +4,9 @@ import AllUserPage from './components/TheAllUsersComponent.js';
 import Defaulthome from './components/TheHomePage.js';
 import kidshome from './components/TheKidsHomePage.js';
 import MovieDetails from './components/MovieDetails.js';
-import createuser from './components/TheCreateUserPage.js';
+import homemusic from './components/TheHomePageMusic.js';
+import kidshomemusic from './components/TheKidsHomePageMusic.js';
+import kidshomevideo from './components/TheKidsHomePageVideos.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
 
@@ -50,6 +52,24 @@ const router = VueRouter.createRouter({
             name: 'allusers',
             component: AllUserPage
         },
+
+        {
+            path:'/homemusic', //this would be the adult homepage for music
+            name: 'homemusic',
+            component: homemusic
+        },
+        {
+            path:'/kidshomemusic', //this would be the adult homepage for music
+            name: 'kidshomemusic',
+            component: kidshomemusic
+        },
+        {
+            path:'/kidshomevideo', //this would be the adult homepage for music
+            name: 'kidshomevideo',
+            component: kidshomevideo
+        },
+
+
 
 
 

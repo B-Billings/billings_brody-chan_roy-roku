@@ -1,9 +1,32 @@
 
 #movieList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    
+}
+#movieList div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+#movieList img {
+    cursor: pointer;
+    margin-bottom: 1em;
+    
+}
+
+#movieList h2{
+   padding: 1em;
+    font-size: 16px;
 }
 #kidscontent img {
     width: 50%;
