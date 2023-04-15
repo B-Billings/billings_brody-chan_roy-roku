@@ -6,3 +6,138 @@
 .adults-background {
     background-color: rgba(0, 0, 0, 0.712);
   }
+
+
+.popup {
+  display: none;
+}
+
+.modal.is-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-content {
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+  max-width: 500px;
+  max-height: 90vh;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+  margin: 1rem 0;
+  align-items: center;
+  text-align: center;
+}
+.box button {
+    margin: .5em;
+    width: 50%;
+    border-radius: 5px;
+}
+.box p {
+    margin: .5em;
+}
+#wrong-info {
+    color: rgb(255, 0, 0);
+    display: none;
+  }
+  
+  #wrong-info.show {
+    display: block;
+  }
+  @media screen and (max-width: 611px) {
+    #adult-nav{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 100%;
+  }
+  #adult-nav ul {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+  #adult-nav ul li {
+      display: flex;
+      flex-direction: row;
+      flex-direction: column;
+  
+      width: 100%;
+      justify-content: space-evenly;
+  }
+  #adult-nav ul li a{
+  color: #fff;
+  flex-wrap: wrap;
+  padding: 1em;
+  scale: 200%;
+  }
+    }
+
+  @media screen and (min-width: 611px) {
+  #adult-nav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+}
+#adult-nav ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#adult-nav ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    justify-content: space-evenly;
+}
+#adult-nav ul li a{
+color: #fff;
+flex-wrap: wrap;
+padding: 1em;
+scale: 200%;
+transition: ease-in-out .2s;
+
+}
+#adult-nav ul li a:hover{
+    scale: 250%;
+    transition: ease-in-out .2s;
+    color: rgb(28, 228, 28);
+    }
+  }
+  #colour-changearea{
+    padding: 1em;
+  }
+  

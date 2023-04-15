@@ -35,8 +35,8 @@ export default{
             <img src="/images/temp_avatar.jpg" alt="Avatar 2" class="avatar-image">
             </label>
           <label class="avatar-option">
-            <input type="radio" name="avatar" v-model="avatar" value="count_olaf.jpg">
-            <img src="/images/count_olaf.jpg" alt="Avatar 3" class="avatar-image">
+            <input type="radio" name="avatar" v-model="avatar" value="seinfeld.jpg">
+            <img src="/images/seinfeld.jpg" alt="Avatar 3" class="avatar-image">
             </label>
         </div>
       </div>
