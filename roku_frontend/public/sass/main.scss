@@ -3,6 +3,7 @@
 @import './modules/login.scss';
 @import './modules/kids.scss';
 @import './modules/homepage.scss';
+@import './modules/createuser.scss';
 @import './modules/queries.scss';
 @import './modules/moviedetails.scss';
 
@@ -12,7 +13,6 @@
 
 body {
     color: $main-text-color;
-    background-color: $main-bg-color;
     background-image: url('~@/assets/images/gunmetal.jpg');
 
     font-size: $main-font-size;

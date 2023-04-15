@@ -81,7 +81,7 @@ export default {
   },
 
   created() {
-    fetch("https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?certificates=us:PG")//https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?certificates=us:PG
+    fetch("")//https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?certificates=us:PG
       .then(response => response.json())
       .then(data => {
         this.allMovies = data.results; // Store all movies data

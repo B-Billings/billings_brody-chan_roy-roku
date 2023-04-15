@@ -7,6 +7,7 @@ import MovieDetails from './components/MovieDetails.js';
 import homemusic from './components/TheHomePageMusic.js';
 import kidshomemusic from './components/TheKidsHomePageMusic.js';
 import kidshomevideo from './components/TheKidsHomePageVideos.js';
+import createuser from './components/TheCreateUserPage.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
 
@@ -68,6 +69,12 @@ const router = VueRouter.createRouter({
             name: 'kidshomevideo',
             component: kidshomevideo
         },
+        {
+            path:'/createuser', //this would be the adult homepage for music
+            name: 'createuser',
+            component: createuser
+        },
+
 
 
 
