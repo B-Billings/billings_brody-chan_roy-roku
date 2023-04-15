@@ -2,7 +2,7 @@ export default{
     name: 'TheCreateUserComponent',
 
     template: `
-    <section id="home-page-box">
+    <section id="home-page-box" >
     <h1 id="create-header">Create a new user</h1>
     <p id="create-psrs">Welcome to the create user page please fill out the form below!</p>
     <form id="user-form" @submit.prevent="trysignup">
@@ -35,8 +35,8 @@ export default{
             <img src="/images/temp_avatar.jpg" alt="Avatar 2" class="avatar-image">
             </label>
           <label class="avatar-option">
-            <input type="radio" name="avatar" v-model="avatar" value="count_olaf.jpg">
-            <img src="/images/count_olaf.jpg" alt="Avatar 3" class="avatar-image">
+            <input type="radio" name="avatar" v-model="avatar" value="seinfeld.jpg">
+            <img src="/images/seinfeld.jpg" alt="Avatar 3" class="avatar-image">
             </label>
         </div>
       </div>

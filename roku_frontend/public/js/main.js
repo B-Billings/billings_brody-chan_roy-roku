@@ -8,6 +8,7 @@ import homemusic from './components/TheHomePageMusic.js';
 import kidshomemusic from './components/TheKidsHomePageMusic.js';
 import kidshomevideo from './components/TheKidsHomePageVideos.js';
 import createuser from './components/TheCreateUserPage.js';
+import settingspage from './components/TheSettingsPage.js';
 
 //import ErrorPage from './modules/ErrorPage.js';
 
@@ -74,6 +75,12 @@ const router = VueRouter.createRouter({
             name: 'createuser',
             component: createuser
         },
+        {
+            path:'/settingspage', //this would be the adult homepage for music
+            name: 'settingspage',
+            component: settingspage
+        },
+
 
 
 
@@ -106,6 +113,9 @@ const router = VueRouter.createRouter({
             }        
         },
         methods: {
+            toggleBackgroundColor() {
+                this.backgroundColor = this.backgroundColor === 'red' ? 'blue' : 'red'
+              },
             logUserOut(){
                 this.authenticated = false;
                 window.localStorage.removeItem('user');
@@ -116,9 +126,12 @@ const router = VueRouter.createRouter({
                 this.authenticated = true;
             },
             gotoprofiles() {
-                // Redirect to CreateUserPage
                 this.$router.push({ name: 'allusers' });
+            },
+            showsettings(){
+                this.$router.push({ name: 'settingspage' });
             }
+            
         }
     });
   // Make sure to _use_ the router instance to make the
