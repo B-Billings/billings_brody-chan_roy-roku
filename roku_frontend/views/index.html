@@ -20,7 +20,7 @@
         <nav class="float-right">
             <ul v-if="authenticated">
                 <li @click="gotoprofiles"><i class="fas fa-user-circle"></i></li>
-                <li><i class="fas fa-cog"></i></li>
+                <li @click="showsettings"><i class="fas fa-cog"></i></li>
                 <li @click="logUserOut"><i class="fas fa-power-off"></i></li>
             </ul>
         </nav>

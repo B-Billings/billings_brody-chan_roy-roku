@@ -11,6 +11,15 @@ export default {
     },
   
     template: `
+    <section id="adult-video-area" class="adults-background">
+    <div id="adult-nav">
+      <ul>
+        <li>
+        <router-link to="/home"> <i class="fas fa-film"></i> MOVIES </router-link>
+        <router-link to="/homemusic"> <i class="fas fa-music"></i> MUSIC </router-link>
+        </li>
+      </ul>
+  </div>
       <div>
         <h1>YouTube Comments</h1>
         <ul>
@@ -24,6 +33,7 @@ export default {
           <button type="submit">Add Comment</button>
         </form>
       </div>
+      </section>
     `,
   
     created() {

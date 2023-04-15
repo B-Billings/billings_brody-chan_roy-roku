@@ -124,7 +124,7 @@ router.get('/users/:user', (req, res) => {
 //       });
 //   });
 // });
-//This one works but doesnt have the random generator from an array
+
 router.post('/signup', (req, res) => {
   const user = {
       fname: req.body.fname,

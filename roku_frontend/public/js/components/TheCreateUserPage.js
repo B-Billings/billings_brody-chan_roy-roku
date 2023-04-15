@@ -2,7 +2,7 @@ export default{
     name: 'TheCreateUserComponent',
 
     template: `
-    <section id="home-page-box">
+    <section id="home-page-box" >
     <h1 id="create-header">Create a new user</h1>
     <p id="create-psrs">Welcome to the create user page please fill out the form below!</p>
     <form id="user-form" @submit.prevent="trysignup">
