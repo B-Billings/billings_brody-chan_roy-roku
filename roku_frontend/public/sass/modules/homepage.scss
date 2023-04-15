@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 .kidsrouter-column{
@@ -65,4 +65,7 @@
 
 #aldutcontent img {
     width: 50%;
+}
+select{
+    padding: .5em;
 }

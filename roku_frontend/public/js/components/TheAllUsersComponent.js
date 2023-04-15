@@ -4,7 +4,7 @@ export default {
 
     template: `
     <section class="user-panel">
-        <h2>Who's Using Roku?</h2>
+        <h2 id="who-using">Who's Using Roku?</h2>
 
         <section class="users-area">
         <ul>

@@ -3,7 +3,6 @@ export default{
 
     template: `
     <section id="home-page-box" class="adults-background">
-    <h1>This is the default Music homepage</h1>
     <div id="adult-nav">
       <ul>
         <li>
