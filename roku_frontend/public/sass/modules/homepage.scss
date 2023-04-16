@@ -28,7 +28,15 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: 1.5em;
+    flex-wrap: wrap;
 }
+#filter-area input{
+    margin: .2em;
+}
+#filter-area select{
+    margin: .2em;
+}
+
 
 .kidsrouter-column{
     display: flex;

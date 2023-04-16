@@ -12,10 +12,13 @@ export default {
   },
   template: `
   <div>
+  <div movie-info-area>
   <div v-if="movie">
-    <h1>{{ movie.title }}</h1>
+    <h1 id="movie-details-header">{{ movie.title }}</h1>
     <p>YouTube Trailer:</p>
+    <div class="video-container">
     <iframe width="1280" height="720" :src="youtubeEmbedUrl" frameborder="0" allowfullscreen ></iframe>
+    </div>
     <p>Released: {{ movie.description }}</p>
     <p>Genre: {{ movie.genres }}</p>
     <p>Plot: {{ movie.plot }}</p>
@@ -23,29 +26,33 @@ export default {
     <p>Content Rating: {{ movie.contentRating }}</p>
     <p>IMDB Rating: {{ movie.imDbRating }}</p>
     <p>Votes: {{ movie.imDbRatingVotes }}</p>
-    <img :src="movie.image" alt="Movie Image">
+    <div class="poster-container">
+    <img id="movie-poster-area":src="movie.image" alt="Movie Image">
+    </div>
   </div>
+  </div>
+  <div id="video-share-area">
   <button @click="shareOnEmail">Share this movie via Email</button>
   <button @click="shareOnFacebook">Share this movie on Facebook</button>
-  <div>
-    <h1>YouTube Comments On Our IMDB Latest Video</h1>
-    <p>Video Likes: {{ videoLikes }}</p>
-    <button @click="likeVideo">Like Video</button>
-    <ul>
-      <li v-for="comment in comments" :key="comment.id">
-        <strong>{{ comment.snippet.topLevelComment.snippet.authorDisplayName }}:</strong> {{ comment.snippet.topLevelComment.snippet.textDisplay }}
-      </li>
-    </ul>
-    <form @submit.prevent="addComment">
-      <input v-model="username" placeholder="Your username..."> 
-      <input v-model="commentText" placeholder="Add a comment...">
-      <button type="submit">Add Comment</button>
-    </form>
   </div>
 
-  <div v-else>
-    <p>Loading Movie Infomations...</p>
-  </div>
+  <div id="youtube-comments-area">
+  <h1>YouTube Comments On Our IMDB Latest Video</h1>
+  <p>Video Likes: {{ videoLikes }}</p>
+  <button id="like-video-button" @click="likeVideo">Like Video</button>
+  <ul id="comments-list">
+    <li v-for="comment in comments" :key="comment.id">
+      <strong class="comment-author">{{ comment.snippet.topLevelComment.snippet.authorDisplayName }}:</strong> {{ comment.snippet.topLevelComment.snippet.textDisplay }}
+    </li>
+  </ul>
+  <form id="comment-form-area" @submit.prevent="addComment">
+    <input v-model="username" placeholder="Your username...">
+    <input v-model="commentText" placeholder="Add a comment...">
+    <button id="add-comment-button" type="submit">Add Comment</button>
+  </form>
+</div>
+
+
 </div>
   `,
   computed: {
@@ -57,12 +64,12 @@ export default {
     }
   },
   created() {
-    fetch(`https://imdb-api.com/API/AdvancedSearch/k_qgp7806t?title=${encodeURIComponent(this.$route.params.title)}`)
+    fetch(`https://imdb-api.com/API/AdvancedSearch/k_mdq0yq5j?title=${encodeURIComponent(this.$route.params.title)}`)
       .then(response => response.json())
       .then(data => {
         if (data.results && data.results.length > 0) {
           this.movie = data.results[0]; 
-          fetch(`https://imdb-api.com/en/API/YouTubeTrailer/k_qgp7806t/${this.movie.id}`)
+          fetch(`https://imdb-api.com/en/API/YouTubeTrailer/k_mdq0yq5j/${this.movie.id}`)
             .then(response => response.json())
             .then(data => {
               if (data && data.videoUrl) {
