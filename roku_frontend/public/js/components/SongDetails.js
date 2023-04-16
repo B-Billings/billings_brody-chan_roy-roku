@@ -3,19 +3,22 @@ export default {
     template: `
     <section id="song-details">
     <div v-if="loading">Loading...</div>
-    <h1>{{ song.title }}</h1>
+    <h1 id="song-details-header">{{ song.title }}</h1>
     <div v-if="song.images && song.images.coverart">
-      <img :src="song.images.coverart" alt="Cover Art">
+      <img id="album-cover" :src="song.images.coverart" alt="Cover Art">
     </div>
+    <div id="song-info-area">
     <p v-if="song.subtitle">{{ song.subtitle }}</p>
     <p>{{ song.description }}</p>
     <p v-if="song.genres && Object.keys(song.genres).length > 0">
       <strong>Genre:</strong> {{ Object.values(song.genres).join(', ') }}
-      <button @click="openInShazam" v-if="song.url">Open in Shazam</button>
+      </div>
+      <div id="share-button-area">
+      <button class="button-share-songs" @click="openInShazam" v-if="song.url">Open in Shazam</button>
       <br>
-      <button @click="shareOnTwitter">Share on Twitter</button>
-      <button @click="shareOnFacebook">Share on Facebook</button>
-      <button @click="shareViaEmail">Share via Email</button>
+      <button class="button-share-songs"  @click="shareOnTwitter">Share on Twitter</button>
+      <button class="button-share-songs"  @click="shareOnFacebook">Share on Facebook</button>
+      <button class="button-share-songs"  @click="shareViaEmail">Share via Email</button>
     </p>
   </section>
   

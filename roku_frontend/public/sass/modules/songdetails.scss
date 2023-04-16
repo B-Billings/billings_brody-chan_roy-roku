@@ -1,0 +1,31 @@
+#album-cover{
+    width: 37%;
+}
+#song-details-header{
+font-size: 3.2vw;
+padding: .5em;
+}
+#song-info-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+#song-info-area p{
+    font-size: 2.8vw;
+    padding: .2em;
+ 
+}
+#share-button-area{
+    display: flex;
+flex-direction: row;
+width: 100%;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+padding: .5em;
+}
+.button-share-songs{
+    margin: .2em;
+    padding: .2em;
+}
