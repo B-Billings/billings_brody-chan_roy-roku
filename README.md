@@ -18,9 +18,10 @@ A brief summary. This is a Node, Vue, Express and API based assignment. There is
 3. We were going to take the user password and send it to the all user page encrypted. We ended up setteling for a pop up that asks the user to verify the username to go to any adult profile
 4. Different content and theames based on kids vs adult  
 5. Videos as well as music pages for each type of user.
-6. Video page features IMDB Api, Advance Search Api and Youtube Api
+6. Video page features IMDB Api, Advance Search Api, Youtube trialer Api
 IMDB api is to grab in the static content, The search is pretty explanitory and the youtube is to load in the video trailer. <br>`(Must be noted all movies dont have a youtube trailer so if after everything loads and you don't see a trailer try another one)`
 7. The music area has multiple different share options after you click on an album
+8. Music is all loaded in using the Shazam API
 
 
 Feel free to look at this [Google Docs](https://drive.google.com/drive/folders/12-3_ZQVZFXVWx9EEwEe8saykGqXuEGpq?usp=sharing) folder for planning and problem solving and extra assets not found in the project.
@@ -86,8 +87,8 @@ HTML markup/outline [W3C](https://validator.w3.org/)
 [IMDB/Youtube trailers](https://imdb-api.com/en/API/YouTubeTrailer/)
 <br>
 [Commenting](https://www.googleapis.com/youtube/v3/commentThreads)
-
 <br>
+[Shazam](https://rapidapi.com/apidojo/api/shazam/)
 
 
 ## License
