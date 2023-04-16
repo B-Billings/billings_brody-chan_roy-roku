@@ -3,29 +3,36 @@ display: flex;
 text-align: center;
 flex-direction: column;
 flex-wrap: wrap;
-overflow: scroll;
+overflow: hidden;
+align-items: center;
+margin-top: 2em;
 }
 .search-input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 50%;
   }
 .songs-list-title {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 3vw;
   }
   
   .song-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+gap: 10px;
+margin-top: 2em;
+flex-wrap: wrap;
+width: 100%;
+justify-content: center;
 
   }
   
   .song-item {
 
     cursor: pointer;
+    width: 400px;
 
   }
   

@@ -12,7 +12,7 @@
 #movieList div {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 400px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -34,4 +34,9 @@
 
 #movieList p {
     font-size: large;
+}
+
+#filter-area input{
+    text-align: center;
+    border-radius: 10px;
 }
